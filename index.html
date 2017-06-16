@@ -17,7 +17,15 @@
     </nav>
   </header>
   <main>
-      <button class="getResults waves-effect waves-light btn" type="submit">Get All Users</button>
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <h1>{{title}}</h1>
+        <div class="body">
+          {{body}}
+        </div>
+      </div>
+    </script>
+    <button class="getResults waves-effect waves-light btn" type="submit">Get All Users</button>
     <div class="row">
     </div>
   </main>
@@ -30,6 +38,7 @@
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script src="app.js"></script>
 </body>
