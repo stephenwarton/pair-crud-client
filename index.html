@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="styles.css">
   <title>user_beers</title>
 </head>
 
@@ -17,18 +17,19 @@
     </nav>
   </header>
   <main>
-    <script id="entry-template" type="text/x-handlebars-template">
-      <div class="entry">
-        <h1>{{title}}</h1>
-        <div class="body">
-          {{body}}
-        </div>
-      </div>
-    </script>
-    <button class="getResults waves-effect waves-light btn" type="submit">Get All Users</button>
     <div class="row">
     </div>
   </main>
+  <script id="entry-template" type="text/x-handlebars-template">
+    {{#each users}}
+    <div class="entry">
+
+      <div class="body">
+        {{email}}
+      </div>
+    </div>
+    {{/each}}
+  </script>
   <footer class="page-footer">
     <div class="footer-copyright">
       <div class="container">
