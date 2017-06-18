@@ -4,10 +4,9 @@ $(appReady);
 
 function appReady() {
 
-  // $('main').append(html);
-
   getUsers()
     .then(showUsers)
+
 }
 
 function getUsers() {
@@ -22,3 +21,27 @@ function showUsers(users) {
   });
   $('main').append(html);
 }
+
+$('button').click(function(event) {
+  event.preventDefault();
+
+  var beerID = $('.beerID').val();
+  var beerName = $('.beerName').val();
+  var beerType = $('.beerType').val();
+  var beerABV = $('.beerABV').val();
+  var beerImage = $('.beerImage').val();
+  var postURL = 'https://pair-crud-api.herokuapp.com/users/' + userID + '/beers'
+
+  var info = {
+    "name": beerName,
+    "type": beerType,
+    "abv": beerABV,
+    "url": beerImage,
+    "user_id": beerID
+  };
+
+  $.post(postURL, info)
+    .then(function(result) {
+      console.log(result);
+    })
+})
