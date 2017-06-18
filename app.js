@@ -6,7 +6,8 @@ function appReady() {
 
   // $('main').append(html);
 
-  getUsers().then(showUsers);
+  getUsers()
+    .then(showUsers)
 }
 
 function getUsers() {

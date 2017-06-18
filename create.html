@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <link rel="stylesheet" href="styles.css">
-  <title>index.html</title>
+  <title>create.html</title>
 </head>
 
 <body>
   <header>
     <nav>
       <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo center">Users and Beers</a>
+        <a href="index.html" class="brand-logo center">Create</a>
       </div>
     </nav>
   </header>
@@ -20,16 +20,28 @@
 
   </main>
   <script id="entry-template" type="text/x-handlebars-template">
-    {{#each users}}
-    <div class="entry">
 
-      <div class="body">
+    <form>
+      <label>Choose a user
+         <select class="selector">
+          {{#each users}}
+          <option value="{{id}}">
+            {{id}}
+          </option>
+          {{/each}}
+        </select>
+      </label>
+      <label>Beer Name:</label>
+      <input class="beerName" type="text" value="" />
+      <label>Beer Type:</label>
+      <input class="beerType" type="text" value="" />
+      <label>Beer ABV:</label>
+      <input class="beerABV" type="text" value="" />
+      <label>Beer Image URL:</label>
+      <input class="beerImage" type="text" value="" />
+      <button type="submit" class="submit" value="">Submit</button>
+    </form>
 
-        {{email}}
-
-      </div>
-    </div>
-    {{/each}}
   </script>
   <footer class="page-footer">
     <div class="footer-copyright">
