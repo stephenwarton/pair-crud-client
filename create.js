@@ -6,11 +6,11 @@ function appReady() {
 
   getUsers()
     .then(showUsers)
-    .then(function(result){
+    .then(function(){
     $('form').submit(function(event) {
       event.preventDefault();
 
-      var userID = $('.userID').val();
+      var userID = $('.selector').val();
       var beerName = $('.beerName').val();
       var beerType = $('.beerType').val();
       var beerABV = $('.beerABV').val();
@@ -24,6 +24,7 @@ function appReady() {
         "url": beerImage,
         "user_id": userID
       };
+      console.log(postURL, info);
 
       $.post(postURL, info)
         .then(function(result) {
