@@ -13,6 +13,9 @@
     <nav>
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo center">Create</a>
+        <ul id="nav-mobile">
+          <li><a href="index.html">Home</a></li>
+        </ul>
       </div>
     </nav>
   </header>
@@ -25,7 +28,7 @@
       <label>Choose a user
          <select class="selector">
           {{#each users}}
-          <option class="beerID" value="{{id}}">User: {{id}}</option>
+          <option class="userID" value="{{id}}">User: {{id}}</option>
           {{/each}}
         </select>
       </label>
@@ -52,7 +55,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-  <script src="app.js"></script>
+  <script src="create.js"></script>
 </body>
 
 </html>

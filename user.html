@@ -13,6 +13,10 @@
     <nav>
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo center">User</a>
+        <ul id="nav-mobile">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="create.html">Create</a></li>
+        </ul>
       </div>
     </nav>
   </header>
@@ -31,23 +35,27 @@
     </div>
   </script>
   <script id="entry-template2" type="text/x-handlebars-template">
-    <div class="entry">
-
-      <div class="body">
-
-        <h2>Favorite Beers</h2>
-        {{#each userResource}}
-        <img src= "{{url}}" alt=''>
-        <p>name: {{name}}
-          <br>
-          type: {{type}}
-          <br>
-          abv: {{abv}}%
-        </p>
-        {{/each}}
-
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          {{#each userResource}}
+          <div class="card">
+            <div class="card-image">
+              <img src="{{url}}">
+            </div>
+            <div class="card-content">
+              <p>type: {{type}}</br>
+                abv: {{abv}}%</p>
+            </div>
+            <div class="card-action">
+              <p class="card-title">{{name}}</p>
+            </div>
+          </div>
+          {{/each}}
+        </div>
       </div>
     </div>
+
   </script>
   <footer class="page-footer">
     <div class="footer-copyright">
