@@ -6,6 +6,30 @@ function appReady() {
 
   getUsers()
     .then(showUsers)
+    .then(function(result){
+    $('form').submit(function(event) {
+      event.preventDefault();
+
+      var userID = $('.userID').val();
+      var beerName = $('.beerName').val();
+      var beerType = $('.beerType').val();
+      var beerABV = $('.beerABV').val();
+      var beerImage = $('.beerImage').val();
+      var postURL = USERS_URL + '/' + userID + '/beers'
+
+      var info = {
+        "name": beerName,
+        "type": beerType,
+        "abv": beerABV,
+        "url": beerImage,
+        "user_id": userID
+      };
+
+      $.post(postURL, info)
+        .then(function(result) {
+        })
+    })
+  });
 }
 
 function getUsers() {
@@ -20,27 +44,3 @@ function showUsers(users) {
   });
   $('main').append(html);
 }
-
-$('button').click(function(event) {
-  event.preventDefault();
-
-  var userID = $('.userID').val();
-  var beerName = $('.beerName').val();
-  var beerType = $('.beerType').val();
-  var beerABV = $('.beerABV').val();
-  var beerImage = $('.beerImage').val();
-  var postURL = USERS_URL + '/' + userID + '/beers'
-
-  var info = {
-    "name": beerName,
-    "type": beerType,
-    "abv": beerABV,
-    "url": beerImage,
-    "user_id": userID
-  };
-
-  $.post(postURL, info)
-    .then(function(result) {
-      console.log(result);
-    })
-})
