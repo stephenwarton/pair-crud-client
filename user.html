@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <link rel="stylesheet" href="styles.css">
-  <title>index.html</title>
+  <title>user.html</title>
 </head>
 
 <body>
   <header>
     <nav>
       <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo center">Users and Beers</a>
+        <a href="index.html" class="brand-logo center">User</a>
       </div>
     </nav>
   </header>
@@ -20,16 +20,34 @@
 
   </main>
   <script id="entry-template" type="text/x-handlebars-template">
-    {{#each users}}
     <div class="entry">
 
       <div class="body">
 
-        <a href="user.html?id={{id}}">{{email}}</a>
+        <p>user: {{user.email}}</p>
+        <p><small>created at: {{user.created_at}}</small></p>
 
       </div>
     </div>
-    {{/each}}
+  </script>
+  <script id="entry-template2" type="text/x-handlebars-template">
+    <div class="entry">
+
+      <div class="body">
+
+        <h2>Favorite Beers</h2>
+        {{#each userResource}}
+        <img src= "{{url}}" alt=''>
+        <p>name: {{name}}
+          <br>
+          type: {{type}}
+          <br>
+          abv: {{abv}}%
+        </p>
+        {{/each}}
+
+      </div>
+    </div>
   </script>
   <footer class="page-footer">
     <div class="footer-copyright">
@@ -42,7 +60,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-  <script src="app.js"></script>
+  <script src="user.js"></script>
 </body>
 
 </html>
