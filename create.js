@@ -24,10 +24,10 @@ function appReady() {
         "url": beerImage,
         "user_id": userID
       };
-      console.log(postURL, info);
 
       $.post(postURL, info)
         .then(function(result) {
+          window.location.replace("http://localhost:3000/index.html");
         })
     })
   });
